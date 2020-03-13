@@ -23,7 +23,7 @@ class Article_model extends CI_Model{
                         ->where_in('cid', $ids)
                         ->where('aid <', $cur_id)
                         ->limit(1)
-                        ->order_by('cid DESC')
+                        ->order_by('aid DESC')
                         ->get('article')
                         ->row_array();
         
@@ -37,7 +37,7 @@ class Article_model extends CI_Model{
                         ->where_in('cid', $ids)
                         ->where('aid >', $cur_id)
                         ->limit(1)
-                        ->order_by('cid DESC')
+                        ->order_by('aid DESC')
                         ->get('article')
                         ->row_array();
         

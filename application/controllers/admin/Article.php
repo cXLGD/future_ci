@@ -140,7 +140,7 @@ class Article extends MY_Controller{
             $error = array('error' => $this->upload->display_errors());
 
             echo "<script>alert('文件上传失败---{$error}');</script>";
-            exit;
+            return '';
         }
         else
         {
@@ -212,7 +212,7 @@ class Article extends MY_Controller{
         $this->load->helper('form');
         $this->load->library('form_validation');
         $this->form_validation->set_rules('title', '标题', 'required');
-        $this->form_validation->set_rules('title', '作者', 'required');
+        $this->form_validation->set_rules('author', '作者', 'required');
 
         if($this->form_validation->run() == TRUE){
             $cid = empty($this->input->post('cid')) ? "" : $this->input->post('cid');
