@@ -49,15 +49,6 @@
               </div>
 
               <div class="pull-right">
-                <!-- <ul class="pagination" id="paginator-example">
-                  <li><a href="#">&lt;</a></li>
-                  <li><a href="#">&lt;&lt;</a></li>
-                  <li><a href="#">1</a></li>
-                  <li class="active"><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">&gt;</a></li>
-                  <li><a href="#">&gt;&gt;</a></li>
-                </ul> -->
                 <?php echo $page; ?>
               </div>
 

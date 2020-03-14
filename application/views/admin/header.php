@@ -83,7 +83,9 @@
           </li>
 
           <li>
-            <a href=""><span class="glyphicons glyphicon-list"></span><span class="sidebar-title">文章分类管理</span></a>
+            <a href="<?php echo site_url('admin/Cate/index'); ?>">
+            <span class="glyphicons glyphicon-list"></span><span class="sidebar-title">文章分类管理</span>
+            </a>
           </li>
           <li>
             <a href="user_list.html"><span class="glyphicons glyphicon-list"></span><span class="sidebar-title">系统管理员</span></a>

@@ -16,353 +16,381 @@
                         <div class="panel-heading">
                             <div class="panel-title">文章分类管理</div>
                         </div>
-                        <form action="#" method="post">
+                        <form action="" method="post">
                             <div class="panel-body">
 
-                                <table class="table table-hover js-table-sections">
+                                <table class="js-table-sections table table-hover">
                                     <thead>
                                     <tr>
                                         <th style="width: 30px;"></th>
-                                        <th>分类名称</th>
-                                        <th width="200">操作</th>
+                                        <th>Name</th>
+                                        <th style="width: 15%;">Access</th>
+                                        <th style="width: 15%;" class="hidden-xs">Date</th>
                                     </tr>
                                     </thead>
-
-                                    <tbody class="js-table-sections-header">
+                                    <tbody class="js-table-sections-header open">
                                     <tr>
-                                        <td><i class="glyphicon glyphicon-chevron-right"></i></td>
-                                        <td>
-                                            <input type="text" class="pcat" data-id="1" name="category[1][cname]" value="科技"/>
-                                            <input type="hidden" name="category[1][cid]" value="1"/>
-                                            <input type="hidden" name="category[1][pid]" value="0"/>
+                                        <td class="text-center">
+                                            <i class="fa fa-angle-right"></i>
                                         </td>
+                                        <td class="font-w600">Amy Hunter</td>
                                         <td>
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-default btn-gradient btnDelRow"><span
-                                                        class="glyphicons glyphicon-trash"></span></button>
-                                                <button type="button" onclick="return addRow2(event);" class="btn btn-default btn-gradient"><span
-                                                        class="glyphicons glyphicon-plus"></span></button>
-                                            </div>
-
+                                            <span class="label label-danger">Disabled</span>
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <em class="text-muted">June 15, 2015 12:16</em>
                                         </td>
                                     </tr>
                                     </tbody>
                                     <tbody>
-
                                     <tr>
-                                        <td></td>
+                                        <td class="text-center"></td>
+                                        <td class="font-w600 text-success">+ $20,00</td>
                                         <td>
-                                            <input type="text"  class="pcat"  data-id="2"  name="category[2][cname]" value="互联网"/>
-                                            <input type="hidden" name="category[2][cid]" value="2"/>
-                                            <input type="hidden" name="category[2][pid]" value="1"/>
+                                            <small>Paypal</small>
                                         </td>
-                                        <td>
-                                            <div class="btn-group">
-                                                <button onclick="return delRow(this)" type="button" class="btn btn-default btn-gradient dropdown-toggle">
-                                                    <span class="glyphicons glyphicon-trash"></span></button>
-                                            </div>
-
+                                        <td class="hidden-xs">
+                                            <small class="text-muted">June 17, 2015 12:16</small>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td></td>
+                                        <td class="text-center"></td>
+                                        <td class="font-w600 text-success">+ $18,00</td>
                                         <td>
-                                            <input type="text"  class="pcat"  data-id="3"  name="category[3][cname]" value="数码"/>
-                                            <input type="hidden" name="category[3][cid]" value="3"/>
-                                            <input type="hidden" name="category[3][pid]" value="1"/>
+                                            <small>Paypal</small>
                                         </td>
-                                        <td>
-                                            <div class="btn-group">
-                                                <button onclick="return delRow(this)" type="button" class="btn btn-default btn-gradient dropdown-toggle">
-                                                    <span class="glyphicons glyphicon-trash"></span></button>
-                                            </div>
-
+                                        <td class="hidden-xs">
+                                            <small class="text-muted">June 24, 2015 12:16</small>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td></td>
+                                        <td class="text-center"></td>
+                                        <td class="font-w600 text-success">+ $76,00</td>
                                         <td>
-                                            <input type="text"  class="pcat"  data-id="4"  name="category[4][cname]" value="IT"/>
-                                            <input type="hidden" name="category[4][cid]" value="4"/>
-                                            <input type="hidden" name="category[4][pid]" value="1"/>
+                                            <small>Paypal</small>
                                         </td>
-                                        <td>
-                                            <div class="btn-group">
-                                                <button onclick="return delRow(this)" type="button" class="btn btn-default btn-gradient dropdown-toggle">
-                                                    <span class="glyphicons glyphicon-trash"></span></button>
-                                            </div>
-
+                                        <td class="hidden-xs">
+                                            <small class="text-muted">June 17, 2015 12:16</small>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td></td>
+                                        <td class="text-center"></td>
+                                        <td class="font-w600 text-success">+ $79,00</td>
                                         <td>
-                                            <input type="text"  class="pcat"  data-id="12"  name="category[12][cname]" value="test"/>
-                                            <input type="hidden" name="category[12][cid]" value="12"/>
-                                            <input type="hidden" name="category[12][pid]" value="1"/>
+                                            <small>Paypal</small>
                                         </td>
-                                        <td>
-                                            <div class="btn-group">
-                                                <button onclick="return delRow(this)" type="button" class="btn btn-default btn-gradient dropdown-toggle">
-                                                    <span class="glyphicons glyphicon-trash"></span></button>
-                                            </div>
-
+                                        <td class="hidden-xs">
+                                            <small class="text-muted">June 5, 2015 12:16</small>
                                         </td>
                                     </tr>
-
                                     </tbody>
-
                                     <tbody class="js-table-sections-header">
                                     <tr>
-                                        <td><i class="glyphicon glyphicon-chevron-right"></i></td>
-                                        <td>
-                                            <input type="text" class="pcat" data-id="5" name="category[5][cname]" value="文化"/>
-                                            <input type="hidden" name="category[5][cid]" value="5"/>
-                                            <input type="hidden" name="category[5][pid]" value="0"/>
+                                        <td class="text-center">
+                                            <i class="fa fa-angle-right"></i>
                                         </td>
+                                        <td class="font-w600">Ashley Welch</td>
                                         <td>
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-default btn-gradient btnDelRow"><span
-                                                        class="glyphicons glyphicon-trash"></span></button>
-                                                <button type="button" onclick="return addRow2(event);" class="btn btn-default btn-gradient"><span
-                                                        class="glyphicons glyphicon-plus"></span></button>
-                                            </div>
-
+                                            <span class="label label-warning">Trial</span>
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <em class="text-muted">June 15, 2015 12:16</em>
                                         </td>
                                     </tr>
                                     </tbody>
                                     <tbody>
-
                                     <tr>
-                                        <td></td>
+                                        <td class="text-center"></td>
+                                        <td class="font-w600 text-success">+ $21,00</td>
                                         <td>
-                                            <input type="text"  class="pcat"  data-id="6"  name="category[6][cname]" value="阅读"/>
-                                            <input type="hidden" name="category[6][cid]" value="6"/>
-                                            <input type="hidden" name="category[6][pid]" value="5"/>
+                                            <small>Paypal</small>
                                         </td>
-                                        <td>
-                                            <div class="btn-group">
-                                                <button onclick="return delRow(this)" type="button" class="btn btn-default btn-gradient dropdown-toggle">
-                                                    <span class="glyphicons glyphicon-trash"></span></button>
-                                            </div>
-
+                                        <td class="hidden-xs">
+                                            <small class="text-muted">June 14, 2015 12:16</small>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td></td>
+                                        <td class="text-center"></td>
+                                        <td class="font-w600 text-success">+ $41,00</td>
                                         <td>
-                                            <input type="text"  class="pcat"  data-id="7"  name="category[7][cname]" value="思考"/>
-                                            <input type="hidden" name="category[7][cid]" value="7"/>
-                                            <input type="hidden" name="category[7][pid]" value="5"/>
+                                            <small>Paypal</small>
                                         </td>
-                                        <td>
-                                            <div class="btn-group">
-                                                <button onclick="return delRow(this)" type="button" class="btn btn-default btn-gradient dropdown-toggle">
-                                                    <span class="glyphicons glyphicon-trash"></span></button>
-                                            </div>
-
+                                        <td class="hidden-xs">
+                                            <small class="text-muted">June 9, 2015 12:16</small>
                                         </td>
                                     </tr>
-
+                                    <tr>
+                                        <td class="text-center"></td>
+                                        <td class="font-w600 text-success">+ $64,00</td>
+                                        <td>
+                                            <small>Paypal</small>
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <small class="text-muted">June 11, 2015 12:16</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"></td>
+                                        <td class="font-w600 text-success">+ $51,00</td>
+                                        <td>
+                                            <small>Paypal</small>
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <small class="text-muted">June 16, 2015 12:16</small>
+                                        </td>
+                                    </tr>
                                     </tbody>
-
                                     <tbody class="js-table-sections-header">
                                     <tr>
-                                        <td><i class="glyphicon glyphicon-chevron-right"></i></td>
-                                        <td>
-                                            <input type="text" class="pcat" data-id="8" name="category[8][cname]" value="生活"/>
-                                            <input type="hidden" name="category[8][cid]" value="8"/>
-                                            <input type="hidden" name="category[8][pid]" value="0"/>
+                                        <td class="text-center">
+                                            <i class="fa fa-angle-right"></i>
                                         </td>
+                                        <td class="font-w600">Tiffany Kim</td>
                                         <td>
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-default btn-gradient btnDelRow"><span
-                                                        class="glyphicons glyphicon-trash"></span></button>
-                                                <button type="button" onclick="return addRow2(event);" class="btn btn-default btn-gradient"><span
-                                                        class="glyphicons glyphicon-plus"></span></button>
-                                            </div>
-
+                                            <span class="label label-info">Business</span>
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <em class="text-muted">June 20, 2015 12:16</em>
                                         </td>
                                     </tr>
                                     </tbody>
                                     <tbody>
-
                                     <tr>
-                                        <td></td>
+                                        <td class="text-center"></td>
+                                        <td class="font-w600 text-success">+ $15,00</td>
                                         <td>
-                                            <input type="text"  class="pcat"  data-id="9"  name="category[9][cname]" value="美食"/>
-                                            <input type="hidden" name="category[9][cid]" value="9"/>
-                                            <input type="hidden" name="category[9][pid]" value="8"/>
+                                            <small>Paypal</small>
                                         </td>
-                                        <td>
-                                            <div class="btn-group">
-                                                <button onclick="return delRow(this)" type="button" class="btn btn-default btn-gradient dropdown-toggle">
-                                                    <span class="glyphicons glyphicon-trash"></span></button>
-                                            </div>
-
+                                        <td class="hidden-xs">
+                                            <small class="text-muted">June 15, 2015 12:16</small>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td></td>
+                                        <td class="text-center"></td>
+                                        <td class="font-w600 text-success">+ $10,00</td>
                                         <td>
-                                            <input type="text"  class="pcat"  data-id="10"  name="category[10][cname]" value="家居"/>
-                                            <input type="hidden" name="category[10][cid]" value="10"/>
-                                            <input type="hidden" name="category[10][pid]" value="8"/>
+                                            <small>Paypal</small>
                                         </td>
-                                        <td>
-                                            <div class="btn-group">
-                                                <button onclick="return delRow(this)" type="button" class="btn btn-default btn-gradient dropdown-toggle">
-                                                    <span class="glyphicons glyphicon-trash"></span></button>
-                                            </div>
-
+                                        <td class="hidden-xs">
+                                            <small class="text-muted">June 21, 2015 12:16</small>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td></td>
+                                        <td class="text-center"></td>
+                                        <td class="font-w600 text-success">+ $77,00</td>
                                         <td>
-                                            <input type="text"  class="pcat"  data-id="11"  name="category[11][cname]" value="旅游"/>
-                                            <input type="hidden" name="category[11][cid]" value="11"/>
-                                            <input type="hidden" name="category[11][pid]" value="8"/>
+                                            <small>Paypal</small>
                                         </td>
-                                        <td>
-                                            <div class="btn-group">
-                                                <button onclick="return delRow(this)" type="button" class="btn btn-default btn-gradient dropdown-toggle">
-                                                    <span class="glyphicons glyphicon-trash"></span></button>
-                                            </div>
-
+                                        <td class="hidden-xs">
+                                            <small class="text-muted">June 22, 2015 12:16</small>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td></td>
+                                        <td class="text-center"></td>
+                                        <td class="font-w600 text-success">+ $68,00</td>
                                         <td>
-                                            <input type="text"  class="pcat"  data-id="13"  name="category[13][cname]" value="ttt"/>
-                                            <input type="hidden" name="category[13][cid]" value="13"/>
-                                            <input type="hidden" name="category[13][pid]" value="8"/>
+                                            <small>Paypal</small>
                                         </td>
-                                        <td>
-                                            <div class="btn-group">
-                                                <button onclick="return delRow(this)" type="button" class="btn btn-default btn-gradient dropdown-toggle">
-                                                    <span class="glyphicons glyphicon-trash"></span></button>
-                                            </div>
-
+                                        <td class="hidden-xs">
+                                            <small class="text-muted">June 3, 2015 12:16</small>
                                         </td>
                                     </tr>
-
                                     </tbody>
-
+                                    <tbody class="js-table-sections-header">
+                                    <tr>
+                                        <td class="text-center">
+                                            <i class="fa fa-angle-right"></i>
+                                        </td>
+                                        <td class="font-w600">Emma Cooper</td>
+                                        <td>
+                                            <span class="label label-success">VIP</span>
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <em class="text-muted">June 22, 2015 12:16</em>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                    <tbody>
+                                    <tr>
+                                        <td class="text-center"></td>
+                                        <td class="font-w600 text-success">+ $51,00</td>
+                                        <td>
+                                            <small>Paypal</small>
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <small class="text-muted">June 17, 2015 12:16</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"></td>
+                                        <td class="font-w600 text-success">+ $88,00</td>
+                                        <td>
+                                            <small>Paypal</small>
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <small class="text-muted">June 6, 2015 12:16</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"></td>
+                                        <td class="font-w600 text-success">+ $27,00</td>
+                                        <td>
+                                            <small>Paypal</small>
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <small class="text-muted">June 4, 2015 12:16</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"></td>
+                                        <td class="font-w600 text-success">+ $66,00</td>
+                                        <td>
+                                            <small>Paypal</small>
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <small class="text-muted">June 12, 2015 12:16</small>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                    <tbody class="js-table-sections-header">
+                                    <tr>
+                                        <td class="text-center">
+                                            <i class="fa fa-angle-right"></i>
+                                        </td>
+                                        <td class="font-w600">Vincent Sims</td>
+                                        <td>
+                                            <span class="label label-warning">Trial</span>
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <em class="text-muted">June 23, 2015 12:16</em>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                    <tbody>
+                                    <tr>
+                                        <td class="text-center"></td>
+                                        <td class="font-w600 text-success">+ $41,00</td>
+                                        <td>
+                                            <small>Paypal</small>
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <small class="text-muted">June 3, 2015 12:16</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"></td>
+                                        <td class="font-w600 text-success">+ $27,00</td>
+                                        <td>
+                                            <small>Paypal</small>
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <small class="text-muted">June 12, 2015 12:16</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"></td>
+                                        <td class="font-w600 text-success">+ $52,00</td>
+                                        <td>
+                                            <small>Paypal</small>
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <small class="text-muted">June 12, 2015 12:16</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"></td>
+                                        <td class="font-w600 text-success">+ $25,00</td>
+                                        <td>
+                                            <small>Paypal</small>
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <small class="text-muted">June 19, 2015 12:16</small>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                    <tbody class="js-table-sections-header">
+                                    <tr>
+                                        <td class="text-center">
+                                            <i class="fa fa-angle-right"></i>
+                                        </td>
+                                        <td class="font-w600">Amy Hunter</td>
+                                        <td>
+                                            <span class="label label-primary">Personal</span>
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <em class="text-muted">June 16, 2015 12:16</em>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                    <tbody>
+                                    <tr>
+                                        <td class="text-center"></td>
+                                        <td class="font-w600 text-success">+ $33,00</td>
+                                        <td>
+                                            <small>Paypal</small>
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <small class="text-muted">June 26, 2015 12:16</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"></td>
+                                        <td class="font-w600 text-success">+ $80,00</td>
+                                        <td>
+                                            <small>Paypal</small>
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <small class="text-muted">June 15, 2015 12:16</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"></td>
+                                        <td class="font-w600 text-success">+ $65,00</td>
+                                        <td>
+                                            <small>Paypal</small>
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <small class="text-muted">June 1, 2015 12:16</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"></td>
+                                        <td class="font-w600 text-success">+ $62,00</td>
+                                        <td>
+                                            <small>Paypal</small>
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <small class="text-muted">June 16, 2015 12:16</small>
+                                        </td>
+                                    </tr>
+                                    </tbody>
                                 </table>
 
-                                <div class="pull-left">
-                                    <button onclick="addRow(this);" type="button" class="btn btn-default btn-gradient pull-right"><span
-                                            class="glyphicons glyphicon-plus"></span></button>
-                                </div>
-                                <div class="text-center">
-                                    <button type="submit" class="btn btn-info btn-gradient">保存</button>
-                                </div>
-
                             </div>
-                            <input type="hidden" name="__hash__" value="d00660f4576a969ab08ecaf8f3e59489_1c70957626bb13ae90a5adcdbb4be0a6" /></form>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- End: Content -->
+</div>
+<!-- End: Main -->
 </body>
 </html>
-
 <script>
+    var $table      = $('.js-table-sections');
+    var $tableRows  = $('.js-table-sections-header > tr', $table);
 
-    $(function () {
-        var $table = $('.js-table-sections');
-        var $tableRows = $('.js-table-sections-header > tr', $table);
+    // When a row is clicked in tbody.js-table-sections-header
+    $tableRows.click(function(e) {
+        var $row    = $(this);
+        var $tbody  = $row.parent('tbody');
 
-        $tableRows.click(function (e) {
-            var $row = $(this);
-            var $tbody = $row.parent('tbody');
+        if (! $tbody.hasClass('open')) {
+            $('tbody', $table).removeClass('open');
+        }
 
-            if (!$tbody.hasClass('open')) {
-                $('tbody', $table).removeClass('open');
-            }
-
-            $tbody.toggleClass('open');
-        });
+        $tbody.toggleClass('open');
     });
-
-    function getMax(){
-        var tmp = $('.pcat');
-        var n = 0;
-        for(var i=0;i<tmp.length;i++){
-            var m = parseInt(tmp.eq(i).attr('data-id'));
-            n = n>m?n:m;
-        }
-        n = n+1;
-        return n;
-    }
-
-    function addRow(){
-        var n = getMax();
-        var $html =  '<tbody class="js-table-sections-header">';
-        $html += '<tr>';
-        $html += '<td><i class="glyphicon glyphicon-chevron-right"></i></td>';
-        $html += '<td>';
-        $html += '<input type="text" class="pcat" data-id="'+n+'" name="category['+n+'][cname]" value=""/>';
-        $html += '<input type="hidden" name="category['+n+'][cid]" value=""/>';
-        $html += '<input type="hidden" name="category['+n+'][pid]" value="0"/>';
-        $html += '</td>';
-        $html += '<td>';
-        $html += '<div class="btn-group">';
-        $html += '<button onclick="return delRow(this)" type="button" class="btn btn-default btn-gradient"><span class="glyphicons glyphicon-trash"></span></button>';
-        $html += '<button onclick="return addRow2(event)" type="button" class="btn btn-default btn-gradient"><span class="glyphicons glyphicon-plus"></span></button>';
-        $html += '</div>';
-        $html += '</td>';
-        $html += '</tr>';
-        $html += '</tbody>';
-        $html += '<tbody>';
-        $html += '</tbody>';
-
-        var $target = $('.js-table-sections');
-        $($html).appendTo($target);
-
-        return false;
-    }
-
-    function addRow2(event){
-
-        event = event ? event : window.event;
-
-        var obj = event.srcElement ? event.srcElement : event.target;
-        var pid = $(obj).parents('td').prev().children('.pcat').attr('data-id');
-        var n = getMax();
-        var $html = '<tr class="padd">' +
-                '<td></td>' +
-                '<td><input type="text"  class="pcat" data-id="'+n+'" name="category['+n+'][cname]" value="" />' +
-                '<input type="hidden" name="category['+n+'][cid]" value=""/>'+
-                '<input type="hidden" name="category['+n+'][pid]" value="'+pid+'"/></td>'+
-                '<td><div class="btn-group"><button onclick="return delRow(this)" type="button" class="btn btn-default btn-gradient dropdown-toggle"><span class="glyphicons glyphicon-trash"></span></button></td></div>' +
-                '</tr>';
-
-        var $parent = $(obj).parent().parent().parent().parent();
-        var $tbody = $parent.next();
-
-        if (!$parent.hasClass('open')) {
-            $parent.addClass('open');
-        }
-
-        $($html).appendTo($tbody);
-        event.stopPropagation();
-
-        return false;
-    }
-
-    function delRow(obj){
-
-        if (confirm("是否删除？")) {
-            var $row = $(obj).parent().parent().parent();
-            $row.remove();
-        }
-
-        return false;
-    }
-
 </script>

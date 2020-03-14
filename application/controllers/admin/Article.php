@@ -66,6 +66,7 @@ class Article extends MY_Controller{
         $this->load->view('admin/article_list', $data);
     }
 
+    // 添加文章
     public function add(){
         $this->load->model('Article_model');
         //所有分类
@@ -121,6 +122,7 @@ class Article extends MY_Controller{
         $this->load->view('admin/article_add', $data);
     }
 
+    // 接收表单信息
     public function upload(){
         $path = 'uploads/article/';
         if(!file_exists($path)){
@@ -154,6 +156,7 @@ class Article extends MY_Controller{
         }
     }
 
+    // 制作缩略图
     public function thumb($path){
         $thumbPath = 'uploads/article/thumb/';
         if(!file_exists($thumbPath)){
