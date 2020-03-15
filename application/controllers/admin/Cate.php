@@ -36,17 +36,26 @@ class Cate extends MY_Controller
         $this->load->view('admin/cate_list', $data);
     }
 
-    function add()
-    {
-        // 一级导航
-    }
-
     // 删除分类
     function del()
     {
-        $cid = $this->uri->segment();
+        $cname = $_POST['cname'];
+        $pid = $this->db->select('cid,pid')->where('cname', '科技')->get('category')->row_array();
+        // pre($pid);
+        if($pid == 0){
+            $res = $this->db->where('pid', $pid['cid'])->where('cname', $cname)->delete('category');
+        }else{
+            $res = $this->db->where('cname', $cname)->delete('category');
+        }
+        
+        if($res){
+            echo 0;
+        }else{
+            echo 1;
+        }
     }
 
+    // 添加或更改文章类型
     function doSome()
     {
         $data = $this->input->post();

@@ -33,7 +33,7 @@
                                     <tr>
                                         <td><i class="glyphicon glyphicon-chevron-right"></i></td>
                                         <td>
-                                            <input type="text" class="pcat" data-id="<?php echo $item['cid']; ?>" name="<?php echo $item['cname']; ?>" placeholder="<?php echo $item['cname']; ?>"/>
+                                            <input type="text" class="pcat" data-id="<?php echo $item['cid']; ?>" name="<?php echo $item['cname']; ?>" value="<?php echo $item['cname']; ?>"/>
                                             <!-- <input type="hidden" name="<?php //echo $item['cid']; ?>[cid]; ?>]" />
                                             <input type="hidden" name="<?php //echo $item['cid']; ?>[pid]; ?>]" /> -->
                                         </td>
@@ -56,7 +56,7 @@
                                     <tr>
                                         <td></td>
                                         <td>
-                                            <input type="text"  class="pcat"  data-id="<?php echo $val['cid']; ?>"  name="<?php echo $val['cname']; ?>" placeholder="<?php echo $val['cname']; ?>"/>
+                                            <input type="text"  class="pcat"  data-id="<?php echo $val['cid']; ?>"  name="<?php echo $val['cname']; ?>" value="<?php echo $val['cname']; ?>"/>
                                             <!-- <input type="hidden" name="<?php //echo $val['cid']; ?>[cid]; ?>]" />
                                             <input type="hidden" name="<?php //echo $val['cid']; ?>[pid]; ?>]" /> -->
                                         </td>
@@ -174,11 +174,22 @@
         return false;
     }
 
-    function delRow(obj){
+    function delRow(obj){var $row = $(obj).parent().parent().parent();
 
+        var cname = $row.children(1).children('input.pcat').val() 
+  
         if (confirm("是否删除？")) {
-            var $row = $(obj).parent().parent().parent();
-            $row.remove();
+            $.post("<?php echo site_url('admin/Cate/del'); ?>",{
+                cname: $row.children(1).children('input.pcat').val(),
+            },function(res){
+                if(res == 0){
+                    var $row = $(obj).parent().parent().parent();
+                    $row.remove();
+                }else{
+                    alert('删除失败！');
+                }
+            });
+            
         }
 
         return false;
