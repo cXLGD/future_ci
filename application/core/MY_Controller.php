@@ -41,7 +41,7 @@ class MY_Controller extends CI_Controller{
             'nav_id' => $nav_id,
             'cate' => $cate
         ];
-
+// pre($cate);die;
         //vars 只传数据
         $this->load->vars($data);
     }

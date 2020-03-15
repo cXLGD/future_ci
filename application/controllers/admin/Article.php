@@ -5,11 +5,6 @@ class Article extends MY_Controller{
     function __construct(){
         parent::__construct();
         $this->isLogin();
-
-        
-        // $data = ['cate' => $cate];
-
-        // $this->load->view('admin/header', $data);
     }
 
     function index(){
@@ -96,16 +91,16 @@ class Article extends MY_Controller{
             $content = empty($this->input->post('editorValue')) ? "" : $this->input->post('editorValue');
             $author = empty($this->input->post('author')) ? "" : $this->input->post('author');
             $isshow = empty($this->input->post('title')) ? "" : $this->input->post('title');
-            $a_img = $this->upload();
+            $a_img = $this->upload('article', 'article');
 
             $formData = [
                 'cid'=>$cid,
-					'title'=>$title ,
-					'content'=>$content,
-					'author'=>$author,
-					'isshow'=>$isshow,
-					'pubtime'=> time(),
-					'a_img'=>$a_img
+                'title'=>$title ,
+                'content'=>$content,
+                'author'=>$author,
+                'isshow'=>$isshow,
+                'pubtime'=> time(),
+                'a_img'=>$a_img
             ];
 
             $res = $this->db->insert('article', $formData);
@@ -123,8 +118,8 @@ class Article extends MY_Controller{
     }
 
     // 接收表单信息
-    public function upload(){
-        $path = 'uploads/article/';
+    public function upload($type='article', $thumbDir='article'){
+        $path = "uploads/{$type}/";
         if(!file_exists($path)){
             mkdir($path, 0777);
         }
@@ -150,15 +145,15 @@ class Article extends MY_Controller{
 
             $uploadPath = $path.$data['upload_data']['file_name'];
 
-            $thumb = $this->thumb($uploadPath);
+            $thumb = $this->thumb($uploadPath, $thumbDir);
 
             return $uploadPath;
         }
     }
 
     // 制作缩略图
-    public function thumb($path){
-        $thumbPath = 'uploads/article/thumb/';
+    public function thumb($path, $thumbDir='article'){
+        $thumbPath = "uploads/{$thumbDir}/thumb/";
         if(!file_exists($thumbPath)){
             mkdir($thumbPath, 0777);
         }

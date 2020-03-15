@@ -16,11 +16,6 @@ class Home extends MY_Controller{
         $admin_info['php_v'] = PHP_VERSION;
         $admin_info['mysql_v'] = $this->db->version();
 
-        // $cate = $this->artHeader();
-
-        // $headerData = ['cate' => $cate];
-
-        // $this->load->view('admin/header', $headerData);
         $this->load->view('admin/index', $admin_info);
     }
 }

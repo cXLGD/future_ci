@@ -64,7 +64,7 @@
             <a href="index.html"><span class="glyphicons glyphicon-home"></span><span class="sidebar-title">控制台</span></a>
           </li>
 
-          <li> <a href="<?php echo site_url('admin/Article'); ?>" class="accordion-toggle"><span class="glyphicons glyphicon-list"></span><span class="sidebar-title">文章管理</span><span class="caret"></span></a>
+          <li> <a href="<?php echo site_url('admin/Article/index'); ?>" class="accordion-toggle"><span class="glyphicons glyphicon-list"></span><span class="sidebar-title">文章管理</span><span class="caret"></span></a>
             <ul class="nav sub-nav" id="sideEight">
               <?php foreach ($cate as $val) {
                 if (empty($val['sub'])) { ?>
@@ -83,10 +83,9 @@
           </li>
 
           <li>
-            <a href="<?php echo site_url('admin/Cate/index'); ?>">
-            <span class="glyphicons glyphicon-list"></span><span class="sidebar-title">文章分类管理</span>
-            </a>
+          <a href="<?php echo site_url('admin/Cate/index'); ?>"><span class="glyphicons glyphicon-list"></span><span class="sidebar-title">文章分类管理</span></a>
           </li>
+
           <li>
             <a href="user_list.html"><span class="glyphicons glyphicon-list"></span><span class="sidebar-title">系统管理员</span></a>
           </li>

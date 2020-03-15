@@ -4,7 +4,7 @@
     <section id="content">
         <div id="topbar" class="affix">
             <ol class="breadcrumb">
-                <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+                <li><a href="<?php echo site_url('admin'); ?>"><span class="glyphicon glyphicon-home"></span></a></li>
                 <li class="active">文章分类管理</li>
             </ol>
         </div>
@@ -16,356 +16,70 @@
                         <div class="panel-heading">
                             <div class="panel-title">文章分类管理</div>
                         </div>
-                        <form action="" method="post">
+                        <form action="<?php echo site_url('admin/Cate/doSome'); ?>" method="post">
                             <div class="panel-body">
 
-                                <table class="js-table-sections table table-hover">
+                                <table class="table table-hover js-table-sections">
                                     <thead>
                                     <tr>
                                         <th style="width: 30px;"></th>
-                                        <th>Name</th>
-                                        <th style="width: 15%;">Access</th>
-                                        <th style="width: 15%;" class="hidden-xs">Date</th>
+                                        <th>分类名称</th>
+                                        <th width="200">操作</th>
                                     </tr>
                                     </thead>
-                                    <tbody class="js-table-sections-header open">
-                                    <tr>
-                                        <td class="text-center">
-                                            <i class="fa fa-angle-right"></i>
-                                        </td>
-                                        <td class="font-w600">Amy Hunter</td>
-                                        <td>
-                                            <span class="label label-danger">Disabled</span>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <em class="text-muted">June 15, 2015 12:16</em>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                    <tbody>
-                                    <tr>
-                                        <td class="text-center"></td>
-                                        <td class="font-w600 text-success">+ $20,00</td>
-                                        <td>
-                                            <small>Paypal</small>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <small class="text-muted">June 17, 2015 12:16</small>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center"></td>
-                                        <td class="font-w600 text-success">+ $18,00</td>
-                                        <td>
-                                            <small>Paypal</small>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <small class="text-muted">June 24, 2015 12:16</small>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center"></td>
-                                        <td class="font-w600 text-success">+ $76,00</td>
-                                        <td>
-                                            <small>Paypal</small>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <small class="text-muted">June 17, 2015 12:16</small>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center"></td>
-                                        <td class="font-w600 text-success">+ $79,00</td>
-                                        <td>
-                                            <small>Paypal</small>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <small class="text-muted">June 5, 2015 12:16</small>
-                                        </td>
-                                    </tr>
-                                    </tbody>
+
+                                    <?php foreach($category as $item){ ?>
                                     <tbody class="js-table-sections-header">
                                     <tr>
-                                        <td class="text-center">
-                                            <i class="fa fa-angle-right"></i>
-                                        </td>
-                                        <td class="font-w600">Ashley Welch</td>
+                                        <td><i class="glyphicon glyphicon-chevron-right"></i></td>
                                         <td>
-                                            <span class="label label-warning">Trial</span>
+                                            <input type="text" class="pcat" data-id="<?php echo $item['cid']; ?>" name="<?php echo $item['cname']; ?>" placeholder="<?php echo $item['cname']; ?>"/>
+                                            <!-- <input type="hidden" name="<?php //echo $item['cid']; ?>[cid]; ?>]" />
+                                            <input type="hidden" name="<?php //echo $item['cid']; ?>[pid]; ?>]" /> -->
                                         </td>
-                                        <td class="hidden-xs">
-                                            <em class="text-muted">June 15, 2015 12:16</em>
+                                        
+                                        <td>
+                                            <div class="btn-group">
+                                                <button type="button" onclick="return delRow(this)" class="btn btn-default btn-gradient btnDelRow"><span
+                                                        class="glyphicons glyphicon-trash"></span></button>
+                                                <button type="button" onclick="return addRow2(event);" class="btn btn-default btn-gradient"><span
+                                                        class="glyphicons glyphicon-plus"></span></button>
+                                            </div>
+
                                         </td>
                                     </tr>
                                     </tbody>
+                                    
                                     <tbody>
+                                    <?php if(!empty($item['sub']) && is_array($item['sub'])){
+                                        foreach($item['sub'] as $val){ ?>
                                     <tr>
-                                        <td class="text-center"></td>
-                                        <td class="font-w600 text-success">+ $21,00</td>
+                                        <td></td>
                                         <td>
-                                            <small>Paypal</small>
+                                            <input type="text"  class="pcat"  data-id="<?php echo $val['cid']; ?>"  name="<?php echo $val['cname']; ?>" placeholder="<?php echo $val['cname']; ?>"/>
+                                            <!-- <input type="hidden" name="<?php //echo $val['cid']; ?>[cid]; ?>]" />
+                                            <input type="hidden" name="<?php //echo $val['cid']; ?>[pid]; ?>]" /> -->
                                         </td>
-                                        <td class="hidden-xs">
-                                            <small class="text-muted">June 14, 2015 12:16</small>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button onclick="return delRow(this)" type="button" class="btn btn-default btn-gradient dropdown-toggle">
+                                                    <span class="glyphicons glyphicon-trash"></span></button>
+                                            </div>
+
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td class="text-center"></td>
-                                        <td class="font-w600 text-success">+ $41,00</td>
-                                        <td>
-                                            <small>Paypal</small>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <small class="text-muted">June 9, 2015 12:16</small>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center"></td>
-                                        <td class="font-w600 text-success">+ $64,00</td>
-                                        <td>
-                                            <small>Paypal</small>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <small class="text-muted">June 11, 2015 12:16</small>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center"></td>
-                                        <td class="font-w600 text-success">+ $51,00</td>
-                                        <td>
-                                            <small>Paypal</small>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <small class="text-muted">June 16, 2015 12:16</small>
-                                        </td>
-                                    </tr>
+                                        <?php }} ?>
                                     </tbody>
-                                    <tbody class="js-table-sections-header">
-                                    <tr>
-                                        <td class="text-center">
-                                            <i class="fa fa-angle-right"></i>
-                                        </td>
-                                        <td class="font-w600">Tiffany Kim</td>
-                                        <td>
-                                            <span class="label label-info">Business</span>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <em class="text-muted">June 20, 2015 12:16</em>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                    <tbody>
-                                    <tr>
-                                        <td class="text-center"></td>
-                                        <td class="font-w600 text-success">+ $15,00</td>
-                                        <td>
-                                            <small>Paypal</small>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <small class="text-muted">June 15, 2015 12:16</small>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center"></td>
-                                        <td class="font-w600 text-success">+ $10,00</td>
-                                        <td>
-                                            <small>Paypal</small>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <small class="text-muted">June 21, 2015 12:16</small>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center"></td>
-                                        <td class="font-w600 text-success">+ $77,00</td>
-                                        <td>
-                                            <small>Paypal</small>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <small class="text-muted">June 22, 2015 12:16</small>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center"></td>
-                                        <td class="font-w600 text-success">+ $68,00</td>
-                                        <td>
-                                            <small>Paypal</small>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <small class="text-muted">June 3, 2015 12:16</small>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                    <tbody class="js-table-sections-header">
-                                    <tr>
-                                        <td class="text-center">
-                                            <i class="fa fa-angle-right"></i>
-                                        </td>
-                                        <td class="font-w600">Emma Cooper</td>
-                                        <td>
-                                            <span class="label label-success">VIP</span>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <em class="text-muted">June 22, 2015 12:16</em>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                    <tbody>
-                                    <tr>
-                                        <td class="text-center"></td>
-                                        <td class="font-w600 text-success">+ $51,00</td>
-                                        <td>
-                                            <small>Paypal</small>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <small class="text-muted">June 17, 2015 12:16</small>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center"></td>
-                                        <td class="font-w600 text-success">+ $88,00</td>
-                                        <td>
-                                            <small>Paypal</small>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <small class="text-muted">June 6, 2015 12:16</small>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center"></td>
-                                        <td class="font-w600 text-success">+ $27,00</td>
-                                        <td>
-                                            <small>Paypal</small>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <small class="text-muted">June 4, 2015 12:16</small>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center"></td>
-                                        <td class="font-w600 text-success">+ $66,00</td>
-                                        <td>
-                                            <small>Paypal</small>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <small class="text-muted">June 12, 2015 12:16</small>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                    <tbody class="js-table-sections-header">
-                                    <tr>
-                                        <td class="text-center">
-                                            <i class="fa fa-angle-right"></i>
-                                        </td>
-                                        <td class="font-w600">Vincent Sims</td>
-                                        <td>
-                                            <span class="label label-warning">Trial</span>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <em class="text-muted">June 23, 2015 12:16</em>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                    <tbody>
-                                    <tr>
-                                        <td class="text-center"></td>
-                                        <td class="font-w600 text-success">+ $41,00</td>
-                                        <td>
-                                            <small>Paypal</small>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <small class="text-muted">June 3, 2015 12:16</small>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center"></td>
-                                        <td class="font-w600 text-success">+ $27,00</td>
-                                        <td>
-                                            <small>Paypal</small>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <small class="text-muted">June 12, 2015 12:16</small>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center"></td>
-                                        <td class="font-w600 text-success">+ $52,00</td>
-                                        <td>
-                                            <small>Paypal</small>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <small class="text-muted">June 12, 2015 12:16</small>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center"></td>
-                                        <td class="font-w600 text-success">+ $25,00</td>
-                                        <td>
-                                            <small>Paypal</small>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <small class="text-muted">June 19, 2015 12:16</small>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                    <tbody class="js-table-sections-header">
-                                    <tr>
-                                        <td class="text-center">
-                                            <i class="fa fa-angle-right"></i>
-                                        </td>
-                                        <td class="font-w600">Amy Hunter</td>
-                                        <td>
-                                            <span class="label label-primary">Personal</span>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <em class="text-muted">June 16, 2015 12:16</em>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                    <tbody>
-                                    <tr>
-                                        <td class="text-center"></td>
-                                        <td class="font-w600 text-success">+ $33,00</td>
-                                        <td>
-                                            <small>Paypal</small>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <small class="text-muted">June 26, 2015 12:16</small>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center"></td>
-                                        <td class="font-w600 text-success">+ $80,00</td>
-                                        <td>
-                                            <small>Paypal</small>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <small class="text-muted">June 15, 2015 12:16</small>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center"></td>
-                                        <td class="font-w600 text-success">+ $65,00</td>
-                                        <td>
-                                            <small>Paypal</small>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <small class="text-muted">June 1, 2015 12:16</small>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center"></td>
-                                        <td class="font-w600 text-success">+ $62,00</td>
-                                        <td>
-                                            <small>Paypal</small>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <small class="text-muted">June 16, 2015 12:16</small>
-                                        </td>
-                                    </tr>
-                                    </tbody>
+                                    <?php } ?>
                                 </table>
 
+                                <div class="pull-left">
+                                    <button onclick="addRow(this);" type="button" class="btn btn-default btn-gradient pull-right"><span
+                                            class="glyphicons glyphicon-plus"></span></button>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-info btn-gradient">保存</button>
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -374,23 +88,100 @@
         </div>
     </section>
     <!-- End: Content -->
-</div>
-<!-- End: Main -->
 </body>
 </html>
+
 <script>
-    var $table      = $('.js-table-sections');
-    var $tableRows  = $('.js-table-sections-header > tr', $table);
 
-    // When a row is clicked in tbody.js-table-sections-header
-    $tableRows.click(function(e) {
-        var $row    = $(this);
-        var $tbody  = $row.parent('tbody');
+    $(function () {
+        var $table = $('.js-table-sections');
+        var $tableRows = $('.js-table-sections-header > tr', $table);
 
-        if (! $tbody.hasClass('open')) {
-            $('tbody', $table).removeClass('open');
+        $tableRows.click(function (e) {
+            var $row = $(this);
+            var $tbody = $row.parent('tbody');
+
+            if (!$tbody.hasClass('open')) {
+                $('tbody', $table).removeClass('open');
+            }
+
+            $tbody.toggleClass('open');
+        });
+    });
+
+    function getMax(){
+        var tmp = $('.pcat');
+        var n = 0;
+        for(var i=0;i<tmp.length;i++){
+            var m = parseInt(tmp.eq(i).attr('data-id'));
+            n = n>m?n:m;
+        }
+        n = n+1;
+        return n;
+    }
+
+    function addRow(){
+        var n = getMax();
+        var $html =  '<tbody class="js-table-sections-header">';
+        $html += '<tr>';
+        $html += '<td><i class="glyphicon glyphicon-chevron-right"></i></td>';
+        $html += '<td>';
+        $html += '<input type="text" class="pcat" data-id="'+n+'" name="category['+n+'][cname]" value=""/>';
+        $html += '<input type="hidden" name="category['+n+'][cid]" value=""/>';
+        $html += '<input type="hidden" name="category['+n+'][pid]" value="0"/>';
+        $html += '</td>';
+        $html += '<td>';
+        $html += '<div class="btn-group">';
+        $html += '<button onclick="return delRow(this)" type="button" class="btn btn-default btn-gradient"><span class="glyphicons glyphicon-trash"></span></button>';
+        $html += '<button onclick="return addRow2(event)" type="button" class="btn btn-default btn-gradient"><span class="glyphicons glyphicon-plus"></span></button>';
+        $html += '</div>';
+        $html += '</td>';
+        $html += '</tr>';
+        $html += '</tbody>';
+        $html += '<tbody>';
+        $html += '</tbody>';
+
+        var $target = $('.js-table-sections');
+        $($html).appendTo($target);
+
+        return false;
+    }
+
+    function addRow2(event){
+
+        event = event ? event : window.event;
+
+        var obj = event.srcElement ? event.srcElement : event.target;
+        var pid = $(obj).parents('td').prev().children('.pcat').attr('data-id');
+        var n = getMax();
+        var $html = '<tr class="padd">' +
+                '<td></td>' +
+                '<td><input type="text"  class="pcat" data-id="'+n+'" name="category['+n+'][cname]" value="" />' +
+                '<input type="hidden" name="category['+n+'][pid]" value="'+pid+'"/></td>'+
+                '<td><div class="btn-group"><button onclick="return delRow(this)" type="button" class="btn btn-default btn-gradient dropdown-toggle"><span class="glyphicons glyphicon-trash"></span></button></td></div>' +
+                '</tr>';
+
+        var $parent = $(obj).parent().parent().parent().parent();
+        var $tbody = $parent.next();
+
+        if (!$parent.hasClass('open')) {
+            $parent.addClass('open');
         }
 
-        $tbody.toggleClass('open');
-    });
+        $($html).appendTo($tbody);
+        event.stopPropagation();
+
+        return false;
+    }
+
+    function delRow(obj){
+
+        if (confirm("是否删除？")) {
+            var $row = $(obj).parent().parent().parent();
+            $row.remove();
+        }
+
+        return false;
+    }
+
 </script>
