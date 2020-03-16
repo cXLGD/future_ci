@@ -83,7 +83,7 @@ class Article extends MY_Controller{
         $this->load->helper('form');
         $this->load->library('form_validation');
         $this->form_validation->set_rules('title', '标题', 'required');
-        $this->form_validation->set_rules('title', '作者', 'required');
+        $this->form_validation->set_rules('author', '作者', 'required');
 
         if($this->form_validation->run() == TRUE){
             $cid = empty($this->input->post('cid')) ? "" : $this->input->post('cid');
@@ -91,7 +91,8 @@ class Article extends MY_Controller{
             $content = empty($this->input->post('editorValue')) ? "" : $this->input->post('editorValue');
             $author = empty($this->input->post('author')) ? "" : $this->input->post('author');
             $isshow = empty($this->input->post('title')) ? "" : $this->input->post('title');
-            $a_img = $this->upload('article', 'article');
+            // pre($this->input->post());die;
+            $a_img = empty($this->input->post('image')) ? '' : $this->upload('article', 'article');
 
             $formData = [
                 'cid'=>$cid,

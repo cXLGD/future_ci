@@ -50,7 +50,7 @@
                                     <div class="input-group"><span class="input-group-addon">作者</span>
                                         <input type="text" name="author" value="<?php set_value('author'); ?>" class="form-control">
                                     </div>
-                                    <?php echo form_error('title'); ?>
+                                    <?php echo form_error('author'); ?>
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group"><span class="input-group-addon">是否显示</span>

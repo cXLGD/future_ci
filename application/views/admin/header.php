@@ -87,7 +87,7 @@
           </li>
 
           <li>
-            <a href="user_list.html"><span class="glyphicons glyphicon-list"></span><span class="sidebar-title">系统管理员</span></a>
+            <a href="<?php echo site_url('admin/User/index'); ?>"><span class="glyphicons glyphicon-list"></span><span class="sidebar-title">系统管理员</span></a>
           </li>
         </ul>
       </div>
