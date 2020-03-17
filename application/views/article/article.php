@@ -36,7 +36,7 @@
           <h4>推荐文章</h4>
           <ol class="list-unstyled">
             <?php foreach($more as $val){ ?>
-            <li><a href="<?php echo site_url('Article/index/'.$val['cid'].'/'.$val['aid']); ?>"><?php echo $val['title']; ?></a></li>
+            <li><a href="<?php echo site_url('Article/index/'.$val['pid'].'/'.$val['aid']); ?>"><?php echo mb_substr($val['title'],0,10); ?></a></li>
             <?php } ?>
           </ol>
         </div>

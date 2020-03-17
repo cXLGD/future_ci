@@ -43,7 +43,12 @@ class Article extends MY_Controller {
 		}
 
 		// 相关新闻
-		$more = $this->db->select('aid,title,cid')->limit(3,1)->get('article')->result_array();
+		$more = $this->db->from('article')
+						 ->join('category','article.cid=category.cid')
+						 ->select('article.aid,article.title,category.pid')
+						 ->limit(3,$aid)
+						 ->get()
+						 ->result_array();
 
 		$data = [
 			'article' => $article,
