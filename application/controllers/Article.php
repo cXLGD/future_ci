@@ -42,11 +42,15 @@ class Article extends MY_Controller {
 			$next = '';
 		}
 
+		// 相关新闻
+		$more = $this->db->select('aid,title,cid')->limit(3,1)->get('article')->result_array();
+
 		$data = [
 			'article' => $article,
 			'type' => $type,
 			'prev' => $prev,
-			'next' => $next
+			'next' => $next,
+			'more' => $more,
 		];
 		$this->load->view('article/article', $data);
 	}

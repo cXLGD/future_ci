@@ -6,16 +6,16 @@
           <dd><a href="#">平台简介</a></dd>
           <dd><a href="#">联系方式</a></dd>
         </dl>
-        <dl class="col-sm-2 site-link">
+        <!-- <dl class="col-sm-2 site-link">
           <dt>帮助中心</dt>
           <dd><a href="#">常见问题</a></dd>
           <dd><a href="#">服务条款</a></dd>
-        </dl>
+        </dl> -->
         <dl class="col-sm-2 site-link">
           <dt>友情链接</dt>
-          <dd><a href="#">腾讯网</a></dd>
-          <dd><a href="#">网易新闻</a></dd>
-          <dd><a href="#">凤凰网</a></dd>
+          <?php foreach($friend as $val){ ?>
+          <dd><a href="<?php echo $val['f_url']; ?>"><?php echo $val['f_name']; ?></a></dd>
+          <?php } ?>
         </dl>
         <dl class="col-sm-2 site-link">
           <dt>关注我们</dt>

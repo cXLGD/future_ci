@@ -35,9 +35,9 @@
         <div class="sidebar-module">
           <h4>推荐文章</h4>
           <ol class="list-unstyled">
-            <li><a href="#">网络专车能这么管吗？</a></li>
-            <li><a href="#">有些事情，罗永浩没有在发布会上告诉你</a></li>
-            <li><a href="#">离开索尼的 VAIO 要用什么产品走出日本</a></li>
+            <?php foreach($more as $val){ ?>
+            <li><a href="<?php echo site_url('Article/index/'.$val['cid'].'/'.$val['aid']); ?>"><?php echo $val['title']; ?></a></li>
+            <?php } ?>
           </ol>
         </div>
 

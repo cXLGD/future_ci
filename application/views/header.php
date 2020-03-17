@@ -58,10 +58,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
             </li>
           <?php } ?>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于我们 <span class="caret"></span></a>
+            <a href="<?php echo site_url('About/index/'); ?>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于我们 <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="about.html">平台简介</a></li>
-              <li><a href="#">联系方式</a></li>
+              <li><a href="">平台简介</a></li>
+              <li><a href="">联系方式</a></li>
             </ul>
           </li>
         </ul>
