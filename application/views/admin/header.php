@@ -89,6 +89,10 @@
           <li>
             <a href="<?php echo site_url('admin/User/index'); ?>"><span class="glyphicons glyphicon-list"></span><span class="sidebar-title">系统管理员</span></a>
           </li>
+
+          <li>
+            <a href="<?php echo site_url('admin/Friends/index'); ?>"><span class="glyphicons glyphicon-list"></span><span class="sidebar-title">合作伙伴管理</span></a>
+          </li>
         </ul>
       </div>
     </aside>
