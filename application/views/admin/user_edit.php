@@ -24,26 +24,24 @@
                             <div class="col-md-7">
                                 <div class="form-group">
                                     <div class="input-group"><span class="input-group-addon">用户名</span>
-                                        <input type="text" name="user" value="<?php set_value('user'); ?>" class="form-control">
+                                        <input type="text" name="a_user" value="" placeholder="<?php echo $user['a_user'] ?>" class="form-control">
+                                        <input type="hidden" name="a_id" value="<?php echo $user['a_id'] ?>">
                                     </div>
-                                    <?php echo form_error('user'); ?>
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group"><span class="input-group-addon">登录密码</span>
-                                        <input type="password" name="pwd" value="<?php set_value('pwd'); ?>" class="form-control">
+                                        <input type="password" name="a_pass" value="" class="form-control">
                                     </div>
-                                    <?php echo form_error('pwd'); ?>
                                 </div>
                                 <div class="form-group">
-                                    <div class="input-group"><span class="input-group-addon">确认密码</span>
-                                        <input type="password" name="pwdconf" value="<?php set_value('pwdconf'); ?>" class="form-control">
+                                    <div class="input-group"><span class="input-group-addon">随机盐</span>
+                                        <input type="text" name="a_salf" placeholder="<?php echo $user['a_salf'] ?>" class="form-control">
                                     </div>
-                                    <?php echo form_error('pwdconf'); ?>
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group"><span class="input-group-addon" style="width:100px;height:28px;">是否可使用</span>
-                                        <input type="radio" name="a_isshow" id="" value="1">是
-                                        <input type="radio" name="a_isshow" id="" value="2">否
+                                        <input type="radio" name="a_isshow" id="" value="1" <?php if($user['a_isshow'] == 1) echo 'checked'; ?>>是
+                                        <input type="radio" name="a_isshow" id="" value="0" <?php if($user['a_isshow'] == 0) echo 'checked'; ?>>否
                                     </div>
                                 </div>
                             </div>
@@ -63,26 +61,6 @@
 <!-- End: Main -->
 <link rel="stylesheet" href="<?php echo base_url('static/admin/js/jquery.min.js'); ?>">
 <link rel="stylesheet" href="<?php echo base_url('static/admin/js/bootstrap.min.js'); ?>">
-
-<script>
-    // $().ready(function(){
-    //     $('.submit').click(function(){
-    //         $.post("<?php //site_url('admin/User/add'); ?>",{
-    //             a_user: $('input[name=a_user]').val(),
-    //             a_pass: $('input[name=a_pass]').val(),
-    //             a_compass: $('input[name=a_compass]').val(),
-    //             a_isshow: $('input[name=a_isshow]').val(),
-    //         },function(res){
-    //             if(res.code == 0){
-    //                 alert('添加成功！');
-    //             }else{
-    //                 alert('添加失败！');
-    //                 window.location.reload();
-    //             }
-    //         })
-    //     })
-    // });
-</script>
 </body>
 
 </html>

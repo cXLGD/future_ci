@@ -37,8 +37,8 @@
                         <td><?php echo $admin['a_isshow']; ?></td>
                         <td>
 		                      <div class="btn-group">
-		                        <a href="user_edit.html" class="btn btn-default btn-gradient"><span class="glyphicons glyphicon-pencil"></span></a>
-		                        <a onclick="return confirm('确定要删除吗？');" href="<?php echo site_url('admin/User/add'); ?>" class="btn btn-default btn-gradient dropdown-toggle"><span class="glyphicons glyphicon-trash"></span></a>
+		                        <a href="<?php echo site_url('admin/User/edit/'.$admin['a_id']); ?>" class="btn btn-default btn-gradient"><span class="glyphicons glyphicon-pencil"></span></a>
+		                        <a onclick="return confirm('确定要删除吗？');" href="<?php echo site_url('admin/User/delUser/'.$admin['a_id']); ?>" class="btn btn-default btn-gradient dropdown-toggle"><span class="glyphicons glyphicon-trash"></span></a>
 		                      </div>
                         
                         </td>
