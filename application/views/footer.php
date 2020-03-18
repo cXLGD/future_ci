@@ -6,11 +6,6 @@
         <dd><a href="<?php echo site_url('About/index'); ?>">平台简介</a></dd>
         <dd><a href="<?php echo site_url('About/contact'); ?>">联系方式</a></dd>
       </dl>
-      <!-- <dl class="col-sm-2 site-link">
-          <dt>帮助中心</dt>
-          <dd><a href="#">常见问题</a></dd>
-          <dd><a href="#">服务条款</a></dd>
-        </dl> -->
       <dl class="col-sm-2 site-link">
         <dt>友情链接</dt>
         <?php foreach ($friend as $val) { ?>
